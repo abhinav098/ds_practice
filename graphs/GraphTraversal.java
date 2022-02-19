@@ -4,12 +4,12 @@ import java.util.Map;
 public class GraphTraversal {
     public static void main(String[] args) {
         Map<String, String[]> graph = Map.of(
-                "a", new String[]{"b", "c"},
-                "b", new String[]{"d"},
-                "c", new String[]{"e"},
-                "d", new String[]{"f"},
-                "e", new String[]{""},
-                "f", new String[]{}
+            "a", new String[]{"b", "c"},
+            "b", new String[]{"d"},
+            "c", new String[]{"e"},
+            "d", new String[]{"f"},
+            "e", new String[]{""},
+            "f", new String[]{}
         );
         dfsRecursive(graph, "a");
     }
