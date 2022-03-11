@@ -5,22 +5,4 @@ function isPrimeNumber(n) {
   return n > 1;
 }
 
-// console.log(isPrimeNumber(19997));
-
-function maxFourDigitPrimeNumber() {
-  const max = 9999;
-  let i = 9950;
-  let maxPrime = 0;
-  while (i < max) {
-    i++;
-    for (let j = 2; j < max; j++) {
-      if (i % j !== 0) {
-        console.log(i, j, i % j);
-        maxPrime = Math.max(maxPrime, i);
-      }
-    }
-  }
-  return maxPrime;
-}
-
-console.log(maxFourDigitPrimeNumber());
+console.log(isPrimeNumber(19997));
