@@ -16,9 +16,9 @@ root.right.left = new Node(12);
 root.right.right = new Node(16);
 
 const minBfs = (root) => {
-  if (root === null) return [];
-  let queue = [root];
   let min = Number.POSITIVE_INFINITY;
+  if (root === null) return min;
+  let queue = [root];
 
   while (queue.length > 0) {
     const current = queue.shift();

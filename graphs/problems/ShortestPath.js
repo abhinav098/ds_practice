@@ -3,14 +3,23 @@
 
 const findShortestPath = (graph, src, dest) => {
   const visited = new Set();
-  const queue = [[src, 0]]; // storing the source with distance
+  // storing the source with distance
+  const queue = [[src, 0]];
+  visited.add(src);
 
   while (queue.length > 0) {
-    const current = queue.shift();
-  }
-};
+    let [current, distance] = queue.shift();
+    if (current === dest) return distance;
 
-const explore = (graph, src, dest, visited) => {};
+    for (let neighbor of graph[current]) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push([neighbor, distance + 1]);
+      }
+    }
+  }
+  return -1;
+};
 
 const graph = {
   x: ["y", "w"],

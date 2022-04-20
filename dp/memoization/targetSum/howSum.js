@@ -27,8 +27,10 @@ const howSumMemo = (targetSum, numbers, memo = {}) => {
   if (targetSum in memo) return memo[targetSum];
   if (targetSum === 0) return [];
   if (targetSum < 0) return null;
-  for (let num of numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    let num = numbers[i];
     let remainder = targetSum - num;
+    numbers.shift();
     let result = howSumMemo(remainder, numbers, memo);
     if (result !== null) {
       result.push(num);
@@ -41,4 +43,4 @@ const howSumMemo = (targetSum, numbers, memo = {}) => {
   return null;
 };
 
-console.log(howSum(50, [15, 20, 5, 14]));
+console.log(howSumMemo(12, [3, 9, 6, 4, 2, 7]));

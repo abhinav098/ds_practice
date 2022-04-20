@@ -50,5 +50,5 @@ const twoSumComp = (nums, target) => {
 };
 
 console.log(twoSum([2, 7, 11, 13, 15, 21, 23, 43, 100, 123, 150], 9));
-console.log(twoSumBinary([2, 7, 11, 13, 15, 21, 23, 43, 100, 123, 150], 9));
+console.log(twoSumBinary([2, 7, 11, 13, 15, 21, 23, 43, 100, 123, 150], 10));
 console.log(twoSumComp([2, 7, 11, 13, 15, 21, 23, 43, 100, 123, 150], 9));

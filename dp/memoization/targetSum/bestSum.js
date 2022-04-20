@@ -19,6 +19,7 @@ const bestSum = (targetSum, numbers) => {
   if (targetSum === 0) return [];
   if (targetSum < 0) return null;
   let shortestComb = null;
+
   for (let num of numbers) {
     let remainder = targetSum - num;
     let result = bestSum(remainder, numbers);

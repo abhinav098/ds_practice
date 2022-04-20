@@ -1,4 +1,4 @@
-const main = () => {
+const main = (arr) => {
   const nums = [1, 5, 2, 7, 8, 3, 9, 10];
   const target = 9;
   const start = 0;

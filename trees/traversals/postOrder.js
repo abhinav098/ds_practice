@@ -25,7 +25,31 @@ const postOrder = (node) => {
 };
 
 // Iterative
-const postOrderIter = (root) => {};
+
+// for postOrder iterative, we have to move to the
+// right most element and then come back to the left
+const postOrderIter = (root) => {
+  if (root === null) return;
+  let current = root;
+  const treeStack = [];
+  const result = [];
+
+  while (current !== null || treeStack.length > 0) {
+    if (current != null) {
+      treeStack.push(current);
+      result.push(current);
+      current = current.right;
+    } else {
+      current = treeStack.pop();
+      current = current.left;
+    }
+  }
+
+  while (result.length > 0) {
+    let r = result.pop();
+    console.log(r.value);
+  }
+};
 
 console.log("----------");
 console.log(postOrder(root));

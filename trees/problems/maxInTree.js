@@ -16,14 +16,14 @@ root.right.left = new Node(12);
 root.right.right = new Node(16);
 
 const maxBfs = (root) => {
-  if (root === null) return [];
+  if (root === null) return 0;
   let queue = [root];
   let max = Number.NEGATIVE_INFINITY;
   const result = [];
 
   while (queue.length > 0) {
     const current = queue.shift();
-    max = Math.max(current.value);
+    max = Math.max(max, current.value);
     if (current.left) queue.push(current.left);
     if (current.right) queue.push(current.right);
   }

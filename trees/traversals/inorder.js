@@ -18,7 +18,7 @@ const inOrder = (node) => {
 const inOrderIter = (node) => {
   // return if current node is null
   if (node == null) return;
-  let current = root;
+  let current = node;
   const treeStack = [];
   while (current != null || treeStack.length > 0) {
     while (current != null) {
