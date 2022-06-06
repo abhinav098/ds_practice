@@ -38,6 +38,5 @@ MyQueue.prototype.peek = function () {
 };
 
 MyQueue.prototype.empty = function () {
-  this.setQueue();
-  return this.stack2.length === 0;
+  return this.stack1.length === 0;
 };

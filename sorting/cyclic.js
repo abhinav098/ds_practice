@@ -19,6 +19,9 @@ const cyclicSort = (arr) => {
   //   }
   // }
 
+  let x = [3, 1, 2, 4, 5, 6];
+  // correct position for 3 = arr[2] - 1 /// 3 - 1 => 2
+
   let deduct = arr.includes(0) ? 0 : 1;
 
   // another way of doing it

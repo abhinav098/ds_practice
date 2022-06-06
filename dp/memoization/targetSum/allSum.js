@@ -10,10 +10,9 @@ const constructAllSum = (numbers, target, result) => {
   for (let i = 0; i < numbers.length; i++) {
     let num = numbers[i];
     let remainder = target - num;
-    numbers.shift();
     let r = allSum(numbers, remainder);
     if (r !== null) {
-      r.push(num);
+      r.map((r) => [...r, num]);
       if (result.length === 0) {
         result.push(...r);
       }
@@ -24,9 +23,3 @@ const constructAllSum = (numbers, target, result) => {
 
 let numbers = [3, 9, 4, 6, 2, 1];
 console.log(allSum(numbers, 12));
-
-// console.log("correct:", [
-//   [3, 9],
-//   [4, 6, 2],
-//   [6, 3, 2, 1],
-// ]);

@@ -29,6 +29,7 @@ var shortestPath = function (grid, k) {
       const validIndex = r + x < m && r + x >= 0 && c + y < n && c + y >= 0;
       if (validIndex) {
         let remObs = obs - grid[r + x][c + y];
+
         let pos = `${r + x},${c + y},${remObs}`;
         if (remObs >= 0 && !visited.has(pos)) {
           visited.add(pos);
@@ -39,3 +40,12 @@ var shortestPath = function (grid, k) {
   }
   return -1;
 };
+
+grid = [
+  [0, 0, 0],
+  [1, 1, 0],
+  [0, 0, 0],
+  [0, 1, 1],
+  [0, 0, 0],
+];
+console.log(shortestPath(grid, 1));

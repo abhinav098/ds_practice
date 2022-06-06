@@ -1,5 +1,3 @@
-// input: word, wordBank[]
-
 const countConstruct = (target, wordBank) => {
   if (target === "") return 1;
   let count = 0;
@@ -35,7 +33,9 @@ const countConstructMemo = (target, wordBank, memo = {}) => {
   return count;
 };
 
-console.log(countConstructMemo("purple", ["purp", "le", "p", "ur", "purpl"]));
+console.log(
+  countConstructMemo("catsandog", ["cats", "dog", "sand", "and", "cat"])
+);
 console.log(
   countConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
 );

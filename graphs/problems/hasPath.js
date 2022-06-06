@@ -1,16 +1,16 @@
-const findPath = (src, destination, graph) => {
-  // return findPathRec(src, destination, graph);
+const hasPath = (src, destination, graph) => {
+  // return hasPathRec(src, destination, graph);
 
-  // return findPathIterative(src, destination, graph);
-  return findPathDfs(src, destination, graph);
+  // return hasPathIterative(src, destination, graph);
+  return hasPathDfs(src, destination, graph);
 };
 
 // dfs recursive
-const findPathRec = (src, destination, graph) => {
+const hasPathRec = (src, destination, graph) => {
   if (src === destination) return true;
 
   for (let neighbor of graph[src]) {
-    if (findPath(neighbor, destination, graph)) {
+    if (hasPath(neighbor, destination, graph)) {
       return true;
     }
   }
@@ -19,7 +19,7 @@ const findPathRec = (src, destination, graph) => {
 };
 
 // bfs
-const findPathIterative = (src, dest, graph) => {
+const hasPathIterative = (src, dest, graph) => {
   let queue = [src];
 
   while (queue.length > 0) {
@@ -35,7 +35,7 @@ const findPathIterative = (src, dest, graph) => {
 };
 
 // dfs
-const findPathDfs = (src, dest, graph) => {
+const hasPathDfs = (src, dest, graph) => {
   let stack = [src];
   while (stack.length > 0) {
     let current = stack.pop();
@@ -57,4 +57,4 @@ let graph = {
   k: [],
 };
 
-console.log(findPath("f", "k", graph));
+console.log(hasPath("f", "k", graph));

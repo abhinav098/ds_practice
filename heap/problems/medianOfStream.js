@@ -23,21 +23,18 @@ MedianFinder.prototype.addNum = function (num) {
 MedianFinder.prototype.findMedian = function () {
   if (this.maxHeap.size() > this.minHeap.size()) {
     return this.maxHeap.peek();
-  } else if (this.minHeap.size() > this.maxHeap.size()) {
-    return this.minHeap.peek();
   } else {
     return (this.maxHeap.peek() + this.minHeap.peek()) / 2;
   }
 };
 
 mf = new MedianFinder();
-mf.addNum(-1);
+mf.addNum(1);
+mf.addNum(2);
 console.log(mf.findMedian());
-mf.addNum(-2);
+mf.addNum(3);
 console.log(mf.findMedian());
-mf.addNum(-3);
+mf.addNum(4);
 console.log(mf.findMedian());
-mf.addNum(-4);
-console.log(mf.findMedian());
-mf.addNum(-5);
+mf.addNum(5);
 console.log(mf.findMedian());

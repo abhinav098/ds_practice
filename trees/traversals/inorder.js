@@ -20,6 +20,7 @@ const inOrderIter = (node) => {
   if (node == null) return;
   let current = node;
   const treeStack = [];
+
   while (current != null || treeStack.length > 0) {
     while (current != null) {
       treeStack.push(current);

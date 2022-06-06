@@ -7,7 +7,6 @@ const minimumIsland = (grid) => {
       if (size > 0) min = Math.min(min, size);
     }
   }
-  console.log(min);
   return min;
 };
 

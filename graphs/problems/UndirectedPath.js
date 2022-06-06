@@ -5,8 +5,7 @@ const undirectedPath = (edges, nodeA, nodeB) => {
 
 const buildGraph = (edges) => {
   const graph = {};
-  for (let edge of edges) {
-    const [a, b] = edge;
+  for (let [a, b] of edges) {
     if (!(a in graph)) graph[a] = [];
     if (!(b in graph)) graph[b] = [];
 
@@ -23,7 +22,7 @@ const hasPath = (graph, src, dest, visited) => {
   if (src === dest) return true;
 
   for (let neighbor of graph[src]) {
-    if (hasPath(graph, neighbor, dest, visited) === true) {
+    if (hasPath(graph, neighbor, dest, visited)) {
       return true;
     }
   }

@@ -30,7 +30,6 @@ const howSumMemo = (targetSum, numbers, memo = {}) => {
   for (let i = 0; i < numbers.length; i++) {
     let num = numbers[i];
     let remainder = targetSum - num;
-    numbers.shift();
     let result = howSumMemo(remainder, numbers, memo);
     if (result !== null) {
       result.push(num);

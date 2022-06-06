@@ -31,12 +31,12 @@ const dfsIter = (root) => {
 
 console.log(dfsIter(root));
 
-const dfs = (root) => {
-  if (root === null) return [];
+// const dfs = (root) => {
+//   if (root === null) return [];
 
-  const left = dfs(root.left);
-  const right = dfs(root.right);
-  return [root.value, ...left, ...right];
-};
+//   const left = dfs(root.left);
+//   const right = dfs(root.right);
+//   return [root.value, ...left, ...right];
+// };
 
-console.log(dfs(root));
+// console.log(dfs(root));

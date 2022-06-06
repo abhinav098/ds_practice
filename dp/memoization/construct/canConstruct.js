@@ -33,18 +33,20 @@ const canConstructMemo = (target, wordBank, memo = {}) => {
   return memo[target];
 };
 
-console.log(canConstruct("purple", ["purp", "le", "p", "ur", "purpl"]));
+console.log(canConstruct("leetcode", ["leet", "code"]));
+// console.log(
+//   canConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+// );
 console.log(
-  canConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+  canConstructMemo("catsandog", ["cats", "dog", "sand", "and", "cat"])
 );
-
-console.log(
-  canConstructMemo("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", [
-    "ee",
-    "ee",
-    "eee",
-    "eeee",
-    "eeeee",
-    "eeeeee",
-  ])
-);
+// console.log(
+//   canConstructMemo("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", [
+//     "ee",
+//     "ee",
+//     "eee",
+//     "eeee",
+//     "eeeee",
+//     "eeeeee",
+//   ])
+// );

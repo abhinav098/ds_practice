@@ -18,11 +18,12 @@ root.right.right = new Node(16);
 const minHeightBfs = (root) => {
   if (root === null) return [];
   let queue = [[root, 1]];
+  let min = Infinity;
   while (queue.length > 0) {
     const current = queue.shift();
 
     if (current[0].left === null && current[0].right === null) {
-      return current[1];
+      min = Math.min(min, current[1]);
     } else {
       if (current[0].left) queue.push([current[0].left, current[1] + 1]);
       if (current[0].right) queue.push([current[0].right, current[1] + 1]);

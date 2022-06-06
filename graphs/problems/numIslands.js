@@ -6,7 +6,6 @@ const islandCount = (grid) => {
       if (explore(grid, r, c, visited) === true) count += 1;
     }
   }
-  console.log(count);
   return count;
 };
 
@@ -19,7 +18,7 @@ const explore = (grid, r, c, visited) => {
   if (grid[r][c] == "W") return false;
 
   // check if already visited and return false in case visited
-  pos = r + "," + c;
+  let pos = r + "," + c;
   if (visited.has(pos)) return false;
   visited.add(pos);
 

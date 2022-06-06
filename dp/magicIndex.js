@@ -6,7 +6,6 @@ const findMagicIndex = (arr) => {
 
   while (start <= end) {
     let mid = Math.floor((start + end) / 2);
-    console.log(mid, arr[mid]);
     if (mid === arr[mid]) {
       return mid;
     } else if (arr[mid] > mid) {
