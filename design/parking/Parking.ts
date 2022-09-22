@@ -12,13 +12,23 @@ class ParkingSystem {
   private types = { small: 50, medium: 50, big: 50 };
 
   private spots = {
-    small: { spots: new Array(50), next: 0 },
-    medium: { spots: new Array(50), next: 0 },
-    big: { spots: new Array(50), next: 0 },
+    small: {
+      spots: new Array(this.types["small"]),
+      used: new Array(this.types["small"]),
+    },
+    medium: {
+      spots: new Array(this.types["medium"]),
+      used: new Array(this.types["medium"]),
+    },
+    big: {
+      spots: new Array(this.types["big"]),
+      used: new Array(this.types["big"]),
+    },
   };
 
   initializeSpots() {
     let types: string[] = Object.keys(this.types);
+
     types.forEach((type: string) => {
       for (let i = 1; i <= this.types[type]; i++) {
         this.spots[type][i - 1] = new ParkingSpot(type, i);
@@ -27,28 +37,33 @@ class ParkingSystem {
   }
 
   checkin(carNumber, type): Ticket | string {
-    let next = this.spots[type]["next"];
-
-    if (next <= this.types[type]) {
-      let parkingSpot = this.spots[type][next];
+    let ticket: Ticket | string;
+    if (this.types[type].length > 0) {
+      let parkingSpot = this.spots[type].shift();
       let vehicle = new Vehicle(carNumber);
-      this.spots[type]["next"]++;
-      return vehicle.checkin(parkingSpot);
+      this.spots[type]["used"].push(parkingSpot);
+
+      ticket = vehicle.checkin(parkingSpot);
     }
+    return "Cannot allot parking";
   }
 
   checkout(ticket, vehicle) {
     let ps = vehicle.checkout(ticket);
-    let location = ps.getLocation().split("-")[1];
+    // find used Index
+    let location = Number.parseInt(ps.getLocation().split("-")[1]);
 
+    // freeup spot in used
+    this.spots[ps.getType()]["used"][location - 1] = undefined;
+
+    // push available spot to the list of
     this.spots[ps.getType()]["spots"].push(ps);
-    this.spots[ps.getType()]["next"] = Number(location);
     return "checked out";
   }
 }
 
 class ParkingSpot {
-  private carNumber: string;
+  private carNumber: string | null;
   private location: string;
   private type: string;
 

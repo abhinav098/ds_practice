@@ -24,7 +24,6 @@ class Locker {
   constructor(cutomer_id, pkg) {
     this.customer_id = cutomer_id;
     this.pkg = pkg;
-    console.log(this);
   }
 }
 
@@ -134,8 +133,6 @@ console.log(
     [15, 50],
   ])
 );
-
-console.log(lockerSystem.unassigned);
 
 /**Given a 2D grid, handle multiple queries of the following type:
 /**

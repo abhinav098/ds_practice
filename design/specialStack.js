@@ -17,10 +17,7 @@ class CustomStack {
   }
 
   push(num) {
-    if (num < this.min) {
-      this.min = num;
-    }
-
+    this.min = Math.min(num, this.min);
     this.stack.push([num, this.min]);
   }
 }
@@ -29,6 +26,7 @@ let cs = new CustomStack();
 for (let i of [1, 2, 5, 3, 0, 4, 0, 1]) {
   cs.push(i);
 }
+
 console.log(cs.getMin());
 console.log(cs.top());
 console.log(cs.pop());
